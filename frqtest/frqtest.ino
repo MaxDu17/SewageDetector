@@ -13,7 +13,7 @@ void loop() {
   long delay_ = pulseIn(8, HIGH);
   delay_avg = delay_avg + delay_;
   }
- // Serial.println(delay_avg / 1000);
+  Serial.println(delay_avg / 1000);
   
   if(delay_avg/1000 >73)
   {

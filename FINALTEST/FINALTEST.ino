@@ -1,4 +1,4 @@
-#define THRESHOLD 73
+#define THRESHOLD 57
 void setup() {
  pinMode(13, OUTPUT);
  pinMode(12, OUTPUT);
@@ -17,18 +17,21 @@ void loop() {
   }
 
   delay_avg = delay_avg/1000;
-  
+  //Serial.println(delay_avg);
   if(delay_avg >THRESHOLD)
   {
-    strikes ++; 
+    strikes++; 
     digitalWrite(12, HIGH);
   }
   else
   {
     digitalWrite(12, LOW);
-    strikes --;
+    if(strikes > 0)
+    {
+      strikes--;
+    }
   }
-  
+  //Serial.println(strikes);
   if(strikes > 40)
   {
     digitalWrite(13, HIGH);

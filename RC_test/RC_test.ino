@@ -28,18 +28,29 @@ void setup() {
    analogRead(0) ;
  Serial.print(millis() - start) ;
  Serial.println(" msec (1000 calls)") ;
+ 
+ pinMode(13, OUTPUT);
+ pinMode(12, OUTPUT);
+ digitalWrite(12, LOW);
 }
 
 void loop() {
+  
   digitalWrite(13, HIGH);
   int val = 0;
+  long time_ = micros();
   while(val < THRESHOLD)
   {
     val = analogRead(A0);
-    Serial.println(val);
   }
-  digitalWrite(13, LOW);
-  delay(5000);
   
+  int diff = micros() - time_;
+  Serial.println(diff);
+  digitalWrite(13, LOW);
+
+  digitalWrite(12, HIGH);
+  delay(500);
+  digitalWrite(12, LOW);
+
 
 }

@@ -1,4 +1,4 @@
-#define THRESHOLD 57
+#define THRESHOLD 89
 void setup() {
  pinMode(13, OUTPUT);
  pinMode(12, OUTPUT);
@@ -17,7 +17,7 @@ void loop() {
   }
 
   delay_avg = delay_avg/1000;
-  //Serial.println(delay_avg);
+//  Serial.println(delay_avg);
   if(delay_avg >THRESHOLD)
   {
     strikes++; 

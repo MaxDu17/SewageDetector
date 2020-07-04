@@ -32,7 +32,7 @@ void loop() {
     }
   }
   //Serial.println(strikes);
-  if(strikes > 40)
+  if(strikes > 80)
   {
     digitalWrite(13, HIGH);
     while(true)
